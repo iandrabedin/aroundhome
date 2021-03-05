@@ -1,6 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import createMockServer from "./services/mock";
+
+if (process.env.NODE_ENV === "development") {
+  createMockServer();
+}
 
 function App() {
   return (
