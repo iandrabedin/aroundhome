@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SelectedTimeSlot } from "types";
 import Button from "../button";
 import { getStartEndTime, getAvailableTime } from "utils";
