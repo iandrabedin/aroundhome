@@ -5,6 +5,7 @@ import { getStartEndTime, getAvailableTime } from "utils";
 
 interface TimeSlotProps {
   companyId: number;
+  id: string;
   startTime: string;
   endTime: string;
   selectedTimeSlot: SelectedTimeSlot;
@@ -20,9 +21,10 @@ const TimeSlot = (props: TimeSlotProps) => {
     onSelectTimeSlot,
     onRemoveTimeSlot,
     selectedTimeSlot,
+    id,
   } = props;
 
-  const [isTimeSlotActive, setIsTimeSlotActive] = useState(false);
+  const isTimeSlotActive = selectedTimeSlot.timeSlotId === id;
 
   const isDisabled =
     !isTimeSlotActive && getAvailableTime(startTime, endTime, selectedTimeSlot);
@@ -30,10 +32,8 @@ const TimeSlot = (props: TimeSlotProps) => {
   const handleOnClick = () => {
     if (isTimeSlotActive) {
       onRemoveTimeSlot();
-      setIsTimeSlotActive(false);
     } else {
-      onSelectTimeSlot({ companyId, startTime, endTime });
-      setIsTimeSlotActive(true);
+      onSelectTimeSlot({ companyId, startTime, endTime, timeSlotId: id });
     }
   };
 

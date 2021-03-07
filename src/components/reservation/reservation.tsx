@@ -10,6 +10,7 @@ export interface ReservationProps {
 
 const initialSelectedTimeSlot = {
   companyId: 0,
+  timeSlotId: "",
   startTime: "",
   endTime: "",
 };
@@ -30,15 +31,16 @@ const Reservation = (props: ReservationProps) => {
 
   return (
     <Container>
-      {companies.map((company, index) => (
-        <Column key={index}>
+      {companies.map((company) => (
+        <Column key={`${company.id}`}>
           <Header company={company} selectedTimeSlot={selectedTimeSlot} />
-          {company?.time_slots_groups.map((group, index) => (
-            <List key={index}>
+          {company?.time_slots_groups.map((group) => (
+            <List key={`${company.id}_${group.date}`}>
               <ListTitle text={getWeekday(group?.date)} />
-              {group?.time_slots.map((time, index) => (
+              {group?.time_slots.map((time) => (
                 <TimeSlot
-                  key={index}
+                  key={`${company.id}_${group.date}_${time.start_time}_${time.end_time}`}
+                  id={`${company.id}_${group.date}_${time.start_time}_${time.end_time}`}
                   companyId={company?.id}
                   startTime={time?.start_time}
                   endTime={time?.end_time}

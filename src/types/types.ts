@@ -29,4 +29,5 @@ export interface SelectedTimeSlot {
   companyId: number;
   startTime: string;
   endTime: string;
+  timeSlotId: string;
 }
