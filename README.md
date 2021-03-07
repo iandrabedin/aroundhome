@@ -17,6 +17,7 @@ This project was developed with the following technologies:
 - [Axios](https://www.npmjs.com/package/axios)
 - [Styled-components](https://www.npmjs.com/package/styled-components)
 - [TypeScript](https://www.typescriptlang.org)
+- [MirageJS](https://miragejs.com/)
 
 ### Installing
 
@@ -35,6 +36,9 @@ yarn install
 ```
 
 **Running**
+
+First rename the file .env.sample to .env, the mockServer will be listen on port 3000.
+
 With all dependencies installed, you can now run the app:
 
 ```
