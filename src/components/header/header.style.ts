@@ -5,7 +5,7 @@ const Container = styled.div`
   position: sticky;
   top: 69px;
   text-align: center;
-  background-color: white;
+  background-color: ${theme.colors.white};
   display: flex;
   flex-direction: column;
   border: 1px solid ${theme.colors.black};
@@ -19,7 +19,10 @@ const ReservationInfo = styled.p`
 const ReservationInfoSelected = styled.p`
   text-transform: uppercase;
   font-weight: bold;
-  color: ${theme.colors.secondary};
+  background-color: ${theme.colors.primary};
+  color: ${theme.colors.white};
+  margin: 0;
+  padding: 1rem;
 `;
 
 const Company = styled.h2``;
