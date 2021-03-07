@@ -22,6 +22,7 @@ const Button = styled.button<IButton>`
   &:active {
     background-color: ${theme.colors.primary};
     color: ${theme.colors.white};
+    opacity: 0.8;
   }
 
   &:disabled {
