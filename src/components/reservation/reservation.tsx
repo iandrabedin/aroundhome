@@ -24,7 +24,7 @@ const Reservation = (props: ReservationProps) => {
     setSelectedTimeSlot(selectedTimeSlot);
   };
 
-  const onRemoveTimeSlot = (companyId: number) => {
+  const onRemoveTimeSlot = () => {
     setSelectedTimeSlot(initialSelectedTimeSlot);
   };
 
@@ -33,15 +33,15 @@ const Reservation = (props: ReservationProps) => {
       {companies.map((company, index) => (
         <Column key={index}>
           <Header company={company} selectedTimeSlot={selectedTimeSlot} />
-          {company.time_slots_groups.map((group, index) => (
+          {company?.time_slots_groups.map((group, index) => (
             <List key={index}>
-              <ListTitle text={getWeekday(group.date)} />
-              {group.time_slots.map((time, index) => (
+              <ListTitle text={getWeekday(group?.date)} />
+              {group?.time_slots.map((time, index) => (
                 <TimeSlot
                   key={index}
-                  companyId={company.id}
-                  startTime={time.start_time}
-                  endTime={time.end_time}
+                  companyId={company?.id}
+                  startTime={time?.start_time}
+                  endTime={time?.end_time}
                   onSelectTimeSlot={onSelectTimeSlot}
                   onRemoveTimeSlot={onRemoveTimeSlot}
                   selectedTimeSlot={selectedTimeSlot}
