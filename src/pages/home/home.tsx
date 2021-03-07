@@ -3,7 +3,7 @@ import { getCompanies } from "../../services";
 import { Loading } from "../../components";
 import { transformCompanyData } from "utils";
 
-const Date = lazy(() => import("../../components/date"));
+const Reservation = lazy(() => import("../../components/reservation"));
 
 const Home = () => {
   const [companies, setCompanies] = useState([]);
@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <Suspense fallback={<Loading size="large" />}>
-      <Date companies={transformCompanyData(companies)} />
+      <Reservation companies={transformCompanyData(companies)} />
     </Suspense>
   );
 };
