@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 import { SelectedTimeSlot } from "types";
 import Button from "../button";
-
+import { getStartEndTime } from "utils";
 interface TimeSlotProps {
   companyId: number;
   startTime: string;
@@ -12,8 +10,6 @@ interface TimeSlotProps {
   onSelectTimeSlot: (param: SelectedTimeSlot) => void;
   onRemoveTimeSlot: (companyId: number) => void;
 }
-
-dayjs.extend(localizedFormat);
 
 const TimeSlot = (props: TimeSlotProps) => {
   const {
@@ -58,9 +54,7 @@ const TimeSlot = (props: TimeSlotProps) => {
       disabled={!isTimeSlotActive && isTimeSlotDisabled}
       variant={isTimeSlotActive ? "primary" : "secondary"}
     >
-      {`${dayjs(startTime).format("HH:mm")} - ${dayjs(endTime).format(
-        "HH:mm"
-      )}`}
+      {getStartEndTime(startTime, endTime)}
     </Button>
   );
 };
