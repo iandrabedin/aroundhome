@@ -2,7 +2,7 @@ import React from "react";
 import { List as StyledList } from "./list.style";
 
 interface ListProps {
-  children: React.ReactChildren;
+  children: React.ReactNode;
 }
 
 const List = (props: ListProps) => {
