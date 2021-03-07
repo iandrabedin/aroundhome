@@ -12,4 +12,16 @@ const Container = styled.div`
   border-radius: 4px;
 `;
 
-export { Container };
+const ReservationInfo = styled.p`
+  text-transform: uppercase;
+`;
+
+const ReservationInfoSelected = styled.p`
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${theme.colors.secondary};
+`;
+
+const Company = styled.h2``;
+
+export { Container, Company, ReservationInfo, ReservationInfoSelected };

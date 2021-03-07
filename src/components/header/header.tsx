@@ -1,7 +1,12 @@
 import React from "react";
 import dayjs from "dayjs";
 import { CompanyVM, SelectedTimeSlot } from "types";
-import { Container } from "./header.style";
+import {
+  Container,
+  Company,
+  ReservationInfo,
+  ReservationInfoSelected,
+} from "./header.style";
 
 interface HeaderProps {
   company: CompanyVM;
@@ -18,13 +23,13 @@ const Header = (props: HeaderProps) => {
 
   return (
     <Container>
-      <p>{company.name}</p>
+      <Company>{company.name}</Company>
       {selectedTimeSlot?.companyId === company.id ? (
-        <p>
+        <ReservationInfoSelected>
           Reservation <span>{reservationTime}</span>
-        </p>
+        </ReservationInfoSelected>
       ) : (
-        <p>No reservation</p>
+        <ReservationInfo>No reservation</ReservationInfo>
       )}
     </Container>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "styles/theme";
 
-const ListTitle = styled.h2`
+const ListTitle = styled.h3`
   color: ${theme.colors.white};
   background-color: ${theme.colors.secondary};
   border: 1px solid ${theme.colors.secondary};
