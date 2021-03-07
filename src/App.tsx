@@ -5,9 +5,12 @@ import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import Navbar from "./components/navbar";
 
-if (process.env.NODE_ENV === "development") {
-  createMockServer();
-}
+// TODO: change to real server at production when available
+// if (process.env.NODE_ENV === "development") {
+//   createMockServer();
+// }
+
+createMockServer();
 
 function App() {
   return (
