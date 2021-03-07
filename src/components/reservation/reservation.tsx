@@ -30,14 +30,15 @@ const Reservation = (props: ReservationProps) => {
 
   return (
     <Container>
-      {companies.map((company) => (
-        <Column>
+      {companies.map((company, index) => (
+        <Column key={index}>
           <Header company={company} selectedTimeSlot={selectedTimeSlot} />
-          {company.time_slots_groups.map((group) => (
-            <List>
+          {company.time_slots_groups.map((group, index) => (
+            <List key={index}>
               <ListTitle text={getWeekday(group.date)} />
-              {group.time_slots.map((time) => (
+              {group.time_slots.map((time, index) => (
                 <TimeSlot
+                  key={index}
                   companyId={company.id}
                   startTime={time.start_time}
                   endTime={time.end_time}
